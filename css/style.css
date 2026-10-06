@@ -75,7 +75,7 @@ button{
 
 .nav{
   position:absolute;
-  z-index:40;
+  z-index:50;
   top:0;
   left:0;
   right:0;
@@ -906,7 +906,7 @@ footer{
   .burger{
     display:flex;
     position:relative;
-    z-index:50;
+    z-index:51;
     flex-shrink:0;
   }
 
