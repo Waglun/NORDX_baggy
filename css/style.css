@@ -72,28 +72,34 @@ button{
 /* =========================================================
    NAVIGATION
 ========================================================= */
-
 .nav{
   position:absolute;
-  z-index:50;
+  z-index:60;
   top:0;
   left:0;
   right:0;
   height:92px;
+
   display:flex;
   align-items:center;
+
   border-bottom:1px solid rgba(255,255,255,.16);
 }
 
 .nav-inner{
   width:min(calc(100% - 64px),var(--max));
   margin:auto;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
+  position:relative;
+  z-index:61;
 }
 
 .logo{
+  position:relative;
   font-weight:900;
   letter-spacing:-.08em;
   font-size:25px;
@@ -122,13 +128,28 @@ button{
   text-shadow:0 2px 12px rgba(0,0,0,.7);
 }
 
+
+/* BURGER */
+
+.burger-layer{
+  position:fixed;
+  top:14px;
+  right:18px;
+
+  z-index:200;
+}
+
 .burger{
   display:none;
+
+  position:relative;
+  z-index:201;
 
   width:44px;
   height:44px;
 
   padding:0;
+
   border:1px solid rgba(255,255,255,.3);
   border-radius:8px;
 
@@ -144,8 +165,10 @@ button{
 
 .burger span{
   display:block;
+
   width:19px;
   height:1px;
+
   background:#fff8ec;
 
   transition:.3s;
@@ -903,15 +926,22 @@ footer{
     display:none;
   }
 
-  .burger{
-    display:flex;
-    position:relative;
-    z-index:51;
-    flex-shrink:0;
-  }
-
   .nav{
     height:72px;
+  }
+
+  .burger-layer{
+    display:block;
+  }
+
+  .burger{
+    display:flex;
+  }
+
+  .container,
+  .nav-inner,
+  .hero-content{
+    width:min(calc(100% - 36px),var(--max));
   }
 
   section{
@@ -1258,16 +1288,21 @@ body.modal-open{
   position:fixed;
   top:0;
   right:0;
-  z-index:45;
+  z-index:50;
 
-  width:min(82vw,360px);
+  /*
+    Меню начинается после области логотипа.
+    130px — ширина, зарезервированная под логотип.
+  */
+  left:130px;
+
   height:100dvh;
 
   padding:110px 30px 40px;
 
   background:#2f281f;
 
-  transform:translate3d(100%,0,0);
+  transform:translateX(100%);
   transition:transform .35s ease;
 
   display:flex;
@@ -1310,6 +1345,10 @@ body.modal-open{
 
 @media(min-width:901px){
   .mobile-menu{
+    display:none;
+  }
+
+  .burger-layer{
     display:none;
   }
 }
@@ -1434,6 +1473,16 @@ body.menu-open{
     flex-shrink:0;
     text-align:right;
   }
+}
+
+@media(max-width:400px){
+
+  .mobile-menu{
+    left:115px;
+    padding-left:24px;
+    padding-right:20px;
+  }
+
 }
 
 .modal {
