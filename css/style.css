@@ -944,6 +944,10 @@ footer{
     width:min(calc(100% - 36px),var(--max));
   }
 
+  .section-head{
+    align-items:flex-start;
+  }
+
   section{
     padding:85px 0;
   }
