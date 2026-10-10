@@ -98,15 +98,67 @@ button{
   z-index:61;
 }
 
-.logo{
-  position:relative;
-  font-weight:900;
-  letter-spacing:-.08em;
-  font-size:25px;
+/* =========================
+   BRAND LOGO
+========================= */
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    color: #fff8ec;
+
+    font-family: Manrope, Inter, sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+
+    letter-spacing: -0.055em;
+    white-space: nowrap;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, .75),
+        0 0 22px rgba(0, 0, 0, .35);
+
+    transition: opacity .3s ease;
 }
 
-.logo span{
-  color:var(--accent);
+/* Акцент */
+
+.logo span {
+    color: #d6a46b;
+    margin: 0 3px;
+}
+
+/* Hover */
+
+.logo:hover {
+    opacity: .8;
+}
+
+/* Убираем возможную старую линию */
+
+.logo::before,
+.logo::after {
+    content: none;
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+    .logo {
+        font-size: 25px;
+    }
 }
 
 .nav-links{
@@ -284,6 +336,25 @@ button{
   );
 
   pointer-events:none;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0 0 auto 0;
+
+    height: 160px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(20, 15, 10, .55) 0%,
+        rgba(20, 15, 10, .22) 55%,
+        transparent 100%
+    );
+
+    pointer-events: none;
+    z-index: 1;
 }
 
 .hero-content{
