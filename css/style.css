@@ -1681,3 +1681,91 @@ body.modal-open {
 .btn-fill:focus-visible::before {
   transform: scaleX(1);
 }
+
+/* Сибирский завод багги */
+.logo.logo-szb {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+/* Сбрасываем старое оформление .logo span */
+.logo.logo-szb span {
+  margin: 0;
+  color: inherit;
+}
+
+.logo.logo-szb .logo-szb__mark {
+  font-family: "Manrope", sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.065em;
+}
+
+.logo.logo-szb .logo-szb__text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding-left: 14px;
+  border-left: 1px solid currentColor;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+}
+
+/* Поверх фотографии */
+.nav .logo.logo-szb {
+  color: #fff8ec;
+  text-shadow: 0 2px 8px rgba(20, 15, 10, .7);
+}
+
+.nav .logo.logo-szb .logo-szb__text {
+  color: #f0dfc7;
+  border-left-color: rgba(240, 223, 199, .45);
+}
+
+.logo.logo-szb:hover {
+  opacity: 1;
+}
+
+/* Логотип в футере */
+footer .logo.logo-szb {
+  color: #746047;
+  text-shadow: none;
+}
+
+footer .logo.logo-szb .logo-szb__text {
+  color: #9a5428;
+  border-left-color: rgba(154, 84, 40, .3);
+  text-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .logo.logo-szb {
+    gap: 10px;
+  }
+
+  .logo.logo-szb .logo-szb__mark {
+    font-size: 30px;
+  }
+
+  .logo.logo-szb .logo-szb__text {
+    padding-left: 10px;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    gap: 4px;
+  }
+}
+
