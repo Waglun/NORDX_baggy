@@ -174,3 +174,58 @@ mobileLinks.forEach(link => {
         document.body.classList.remove('menu-open');
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const viewer = document.getElementById('galleryViewer');
+
+  if (!viewer) return;
+
+  const fullImage = viewer.querySelector('.gallery-viewer__image');
+  const closeButton = viewer.querySelector('.gallery-viewer__close');
+
+  let lastTrigger = null;
+
+  document.querySelectorAll('.gallery img').forEach(image => {
+    // Оборачиваем фото в кнопку, чтобы работали также Enter и пробел.
+    const button = document.createElement('button');
+
+    button.type = 'button';
+    button.className = 'gallery-open';
+    button.setAttribute(
+      'aria-label',
+      `Открыть фотографию: ${image.alt || 'Багги'}`
+    );
+
+    image.before(button);
+    button.append(image);
+
+    button.addEventListener('click', () => {
+      lastTrigger = button;
+
+      fullImage.src = image.currentSrc || image.src;
+      fullImage.alt = image.alt;
+
+      viewer.showModal();
+      document.body.classList.add('gallery-viewer-open');
+    });
+  });
+
+  closeButton.addEventListener('click', () => {
+    viewer.close();
+  });
+
+  // Закрытие при нажатии на свободное пространство вокруг фото.
+  viewer.addEventListener('click', event => {
+    if (event.target === viewer) {
+      viewer.close();
+    }
+  });
+
+  // Срабатывает также после закрытия клавишей Esc.
+  viewer.addEventListener('close', () => {
+    document.body.classList.remove('gallery-viewer-open');
+    fullImage.removeAttribute('src');
+    lastTrigger?.focus({ preventScroll: true });
+  });
+});
