@@ -310,7 +310,7 @@ button{
       rgba(62,47,31,.34) 50%,
       rgba(82,62,40,.18) 100%
     ),
-    url('../buggy-hero.jpg');
+    url('../media/ROCKRACER_PURP/ROCKRACER_PURP_1.jpg');
 
   background-position:center center;
   background-size:cover;
@@ -558,6 +558,7 @@ h2{
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position: 10% center;
   position:absolute;
   inset:0;
   transition:transform .7s;
@@ -688,7 +689,7 @@ h2{
       rgba(42,32,21,.48),
       rgba(74,57,37,.14)
     ),
-    url('https://p3.hippopx.com/preview/816/249/black-and-gray-dune-buggy-sand-dunes-atv-desert-dunes-adventure-riding-thrill-picturesque-desert-off-road-vehicle-outdoor-adventure-desert-exploration.jpg')
+    url('../media/ROCKRACER_PURP/ROCKRACER_PURP_7.png')
     center/cover fixed;
 }
 
@@ -724,8 +725,11 @@ h2{
   height:640px;
 
   background:
-    url('https://p3.hippopx.com/preview/150/625/dune-buggy-sandy-desert-dunes-off-road-adventure-clear-blue-sky-rugged-atv-desert-exploration-sand-dunes-rocks-outdoor-adventure-desert-landscape.jpg')
+    url('../media/ROCKRACER_RED/ROCKRACER_RED_12.png')
     center/cover;
+
+  background-position: 25% center;
+  filter: saturate(.65) brightness(.85);
 
   position:relative;
   border-radius:18px;
@@ -780,8 +784,9 @@ h2{
   min-height:620px;
 
   background:
-    url('https://p1.hippopx.com/preview/960/985/168/cage-off-road-jeep-trail.jpg')
+    url('../media/ROCKRACER_2/ROCKRACER_DEF_1.jpg')
     center/cover;
+  background-position: 52% center;
 
   border-radius:18px;
   overflow:hidden;
@@ -839,6 +844,10 @@ h2{
   transition:.6s;
 }
 
+.gallery > div:nth-child(2) img {
+  filter: saturate(.65) brightness(.85);
+}
+
 .gallery div:hover img{
   transform:scale(1.04);
 }
@@ -851,6 +860,14 @@ h2{
   grid-column:span 2;
 }
 
+.gallery .wide img {
+  object-position: center 65%;
+  filter: saturate(.65) brightness(.85);
+}
+
+.gallery > div:last-child img {
+  object-position: center 55%;
+}
 
 /* =========================================================
    FAQ
@@ -928,7 +945,7 @@ h2{
       rgba(44,34,22,.55),
       rgba(36,28,19,.14)
     ),
-    url('https://p3.hippopx.com/preview/816/249/black-and-gray-dune-buggy-sand-dunes-atv-desert-dunes-adventure-riding-thrill-picturesque-desert-off-road-vehicle-outdoor-adventure-desert-exploration.jpg')
+    url('../media/FACTORY/FACROR_2.2.png')
     center/cover;
 }
 
