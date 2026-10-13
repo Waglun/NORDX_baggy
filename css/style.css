@@ -786,7 +786,7 @@ h2{
   background:
     url('../media/ROCKRACER_2/ROCKRACER_DEF_1.jpg')
     center/cover;
-  background-position: 52% center;
+  background-position: 51% center;
 
   border-radius:18px;
   overflow:hidden;
@@ -1568,7 +1568,7 @@ body.menu-open{
 
   .hero{
     min-height:100svh;
-    background-position:60% center;
+    background-position:24% center;
   }
 
   .scroll{
@@ -1870,4 +1870,27 @@ footer .logo.logo-szb .logo-szb__text {
 body.gallery-viewer-open {
   overflow: hidden;
 }
+
+@media (max-width: 560px) {
+  .specs {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .spec {
+    padding: 0;
+    border-left: none;
+  }
+
+  .model-card img {
+    object-position: 40% center;
+  }
+
+  .full-visual {
+    background-attachment: scroll;
+    background-position: center, 60% center;
+  }
+}
+
 
