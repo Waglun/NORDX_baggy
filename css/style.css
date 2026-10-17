@@ -1893,4 +1893,279 @@ body.gallery-viewer-open {
   }
 }
 
+/* ========================================
+   DEVELOPMENT — блок разработки
+======================================== */
 
+.development {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.6fr);
+  align-items: start;
+  gap: clamp(24px, 4vw, 56px);
+
+  margin-top: clamp(36px, 5vw, 64px);
+  padding-top: clamp(24px, 3vw, 36px);
+
+  border-top: 1px solid rgba(47, 40, 31, 0.2);
+}
+
+/* Описание */
+
+.development__info {
+  max-width: 370px;
+  padding-top: 4px;
+}
+
+.development__eyebrow {
+  display: block;
+  margin-bottom: 16px;
+
+  color: #8b6845;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.development__info h3 {
+  max-width: 340px;
+  margin: 0 0 18px;
+
+  font-size: clamp(24px, 2.4vw, 34px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.development__info > p {
+  max-width: 350px;
+  margin: 0;
+
+  color: rgba(47, 40, 31, 0.8);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Дополнительная подпись */
+
+.development__note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+
+  color: rgba(47, 40, 31, 0.65);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.development__note-line {
+  flex: 0 0 22px;
+  height: 1px;
+  background: #a97843;
+}
+
+/* Галерея */
+
+.development__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(12px, 1.8vw, 22px);
+
+  min-width: 0;
+}
+
+.development-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+
+  border-radius: 12px;
+}
+
+/* Изображения */
+
+.development-card__image {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: 12px;
+  background: #d6c5aa;
+
+  cursor: zoom-in;
+  appearance: none;
+}
+
+.development-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.45s ease;
+}
+
+.development-card__image:hover img {
+  transform: scale(1.045);
+}
+
+.development-card__image:focus-visible {
+  outline: 2px solid #8b6845;
+  outline-offset: 4px;
+}
+
+/* Значок увеличения */
+
+.development-card__zoom {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+
+  border: 1px solid rgba(241, 230, 211, 0.35);
+  border-radius: 50%;
+
+  color: #f1e6d3;
+  background: rgba(47, 40, 31, 0.8);
+  font-size: 17px;
+
+  pointer-events: none;
+  transition: background 0.25s ease;
+}
+
+.development-card__image:hover .development-card__zoom {
+  background: #8b6845;
+}
+
+/* Подписи карточек */
+
+.development-card__caption {
+  padding: 16px 2px 0;
+}
+
+.development-card__index {
+  display: block;
+  margin-bottom: 9px;
+
+  color: #8b6845;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+}
+
+.development-card__caption h4 {
+  margin: 0 0 8px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.development-card__caption p {
+  max-width: 260px;
+  margin: 0;
+
+  color: rgba(47, 40, 31, 0.72);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   TABLET — планшеты
+======================================== */
+
+@media (max-width: 900px) {
+  .development {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .development__info {
+    max-width: 560px;
+  }
+
+  .development__info h3 {
+    max-width: 440px;
+  }
+
+  .development__info > p {
+    max-width: 520px;
+  }
+
+  .development__note {
+    margin-top: 18px;
+  }
+
+  .development__gallery {
+    gap: 18px;
+  }
+}
+
+/* ========================================
+   MOBILE — телефоны
+======================================== */
+
+@media (max-width: 480px) {
+  .development {
+    margin-top: 34px;
+    padding-top: 24px;
+    gap: 22px;
+  }
+
+  .development__info h3 {
+    font-size: 27px;
+  }
+
+  .development__gallery {
+    gap: 10px;
+  }
+
+  .development-card,
+  .development-card__image {
+    border-radius: 9px;
+  }
+
+  .development-card__image {
+    aspect-ratio: 3 / 2;
+  }
+
+  .development-card__zoom {
+    right: 7px;
+    bottom: 7px;
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+  }
+
+  .development-card__caption {
+    padding-top: 12px;
+  }
+
+  .development-card__caption h4 {
+    font-size: 12px;
+  }
+
+  .development-card__caption p {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+}
+
+/* Учитываем настройки уменьшения анимации */
+
+@media (prefers-reduced-motion: reduce) {
+  .development-card__image img,
+  .development-card__zoom {
+    transition: none;
+  }
+}
